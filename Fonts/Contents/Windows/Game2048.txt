@@ -1,0 +1,70 @@
+2048 - JOGO DE RACIOCÍNIO E ESTRATÉGIA
+
+COMO JOGAR:
+-----------
+1. OBJETIVO: Combine blocos com números iguais para criar o bloco 2048.
+
+2. CONTROLES:
+   - Botões ???? para mover todos os blocos na direção desejada.
+   - Botão "Novo Jogo" para reiniciar.
+   - Botão "Desfazer" para voltar um movimento.
+   - Botão "Ajuda" para estas informações.
+
+3. REGRAS:
+   - Todos os blocos deslizam na direção escolhida até encontrar borda ou outro bloco.
+   - Quando dois blocos com o mesmo número colidem, eles se fundem em um bloco com a soma dos valores.
+   - Após cada movimento válido, um novo bloco (2 ou 4) aparece em uma posição vazia aleatória.
+   - O jogo termina quando não há mais movimentos possíveis.
+
+4. PONTUAÇÃO:
+   - Você ganha pontos sempre que funde dois blocos.
+   - A pontuação é a soma de todos os valores resultantes das fusões.
+   - Exemplo: fundir dois blocos 4 gera um bloco 8 e 8 pontos.
+
+5. ESTRATÉGIAS:
+   - ESTRATÉGIA DO CANTO: Mantenha seu maior bloco em um canto (preferencialmente inferior esquerdo).
+   - LINHA MESTRA: Mantenha uma linha ou coluna com números crescentes.
+   - NÃO ENCHA O TABULEIRO: Deixe espaços para manobras.
+   - PLANEJE À FRENTE: Antes de mover, pense no próximo movimento.
+
+6. DICAS:
+   - Comece movendo principalmente em duas direções.
+   - Use o botão "Desfazer" para aprender com seus erros.
+   - Não tenha pressa - cada movimento é importante.
+   - Pratique! A estratégia vem com a experiência.
+
+7. NÍVEIS (SUGESTÃO):
+   - INICIANTE: Alcance 256
+   - INTERMEDIÁRIO: Alcance 1024
+   - AVANÇADO: Alcance 2048
+   - MESTRE: Alcance 4096 ou mais!
+
+HISTÓRIA:
+---------
+2048 foi criado em 2014 por Gabriele Cirulli, um desenvolvedor italiano de 19 anos.
+O jogo foi inspirado em 1024 de Veewo Studio e Threes de Asher Vollmer.
+Rapidamente se tornou um fenômeno viral, com milhões de jogadores em todo o mundo.
+
+VARIANTES:
+----------
+- 2048 5x5: Tabuleiro maior, mais desafiador.
+- 2048 com obstáculos: Algumas células bloqueadas.
+- 2048 com power-ups: Blocos especiais com efeitos.
+- 2048 em 3D: Versão tridimensional.
+
+CURIOSIDADES:
+-------------
+- A sequência de números é baseada em potências de 2.
+- Teoricamente, o maior bloco possível no jogo original é 131072 (2^17).
+- Existem algoritmos que podem resolver o jogo automaticamente.
+- O recorde mundial não oficial é acima de 500.000 pontos.
+
+DESENVOLVIMENTO:
+----------------
+Versão AutoLISP desenvolvida por: Ark-Z Arquitetura Ltda
+Baseado no código original de: Gabriele Cirulli
+Adaptado para AutoCAD AutoLISP/DCL
+
+DIVIRTA-SE E BOA SORTE!
+Lembre-se: 2048 não é apenas sorte, é estratégia!
+

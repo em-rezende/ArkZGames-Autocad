@@ -1,0 +1,65 @@
+============================================================
+SEA BATTLE 8x8 - AJUDA (VERSÃO 1.0 FINAL)
+============================================================
+
+1. SOBRE O JOGO
+
+Este é o jogo completo de Batalha Naval (Sea Battle) desenvolvido pela ARK-Z ARQUITETURA LTDA para o ambiente AutoCAD. A versão 1.0 (FINAL) possui uma interface gráfica (DCL) e um oponente de Inteligência Artificial (IA) avançada.
+
+* COMANDO PARA INICIAR:
+    Após carregar o arquivo LISP, digite 'SeaBattle_8x8' na linha de comando do AutoCAD.
+
+* TAMANHO DO TABULEIRO: 8x8.
+
+
+2. CONFIGURAÇÃO DO JOGO
+
+Ao iniciar, o diálogo "Configuração do jogo" permite escolher o modo:
+
+Modos:
+
+  - Clássico:   Configuração padrão da Batalha Naval.(6 navios)
+  - Rápido:     Menos navios grandes. Partidas mais rápidas. (6 navios)
+  - Desafiador: Maior número de navios. Jogo mais longo/complexo. (navios)
+
+NAVIO PADRÃO (Modo Clássico - 6 Navios):
+  - Porta-aviões: 1 unidade (5 células)
+  - Navio de guerra: 1 unidade (4 células)
+  - Cruzador: 2 unidades (3 células)
+  - Destroyer: 1 unidade (2 células)
+  - Submarino: 1 unidade (1 célula)
+
+
+3. JOGABILIDADE
+
+O jogo é disputado em turnos alternados entre o JOGADOR e o COMPUTADOR.
+
+* TABULEIROS:
+    - **SEU TABULEIRO (Esquerda):** Exibe a posição dos seus navios e os tiros recebidos do oponente.
+    - **TABULEIRO DO INIMIGO (Direita):** Exibe seus tiros. Você deve CLICAR neste tabuleiro para ATACAR.
+
+* FLUXO DO TURNO:
+  1.  POSICIONAMENTO (Automático): Navios são colocados no início.
+  2.  TIRO DO JOGADOR: Clique em uma célula do TABULEIRO DO INIMIGO.
+      - ACERTO (HIT): Você afunda parte de um navio. Você JOGA NOVAMENTE.
+      - ERRO (MISS): Você atinge a água. O turno passa para o COMPUTADOR.
+  3.  TIRO DO COMPUTADOR: A IA utiliza estratégias avançadas para buscar
+      (Hunting Mode) e destruir (Targeting Mode) seus navios.
+
+* OBJETIVO: Afundar todos os navios do oponente antes que ele afunde os seus.
+
+* SÍMBOLOS VISUAIS (TABULEIRO DO INIMIGO):
+ - Célula Vazia: Água (Ainda não atingida).
+ - Erro (MISS): Tiro na água.
+ - Acerto (HIT): Tiro que atingiu um navio.
+
+
+4. FUNCIONALIDADES DA INTERFACE
+
+O diálogo possui os seguintes botões:
+
+ - Reiniciar Jogo: Inicia uma nova partida com a configuração atual.
+ - Sair: Encerra o jogo e fecha o diálogo.
+ - Ajuda: Exibe informações adicionais sobre o desenvolvedor (ARK-Z Arquitetura).
+	
+	

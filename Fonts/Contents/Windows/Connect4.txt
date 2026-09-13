@@ -1,0 +1,63 @@
+===========================================================
+    GUIA DE AJUDA - JOGO CONECTA-N (CONECT4.LSP)
+    ARK-Z ARQUITETURA
+===========================================================
+
+1. OBJETIVO DO JOGO
+-----------------------------------------------------------
+O objetivo do Connecta-N é ser o primeiro jogador a obter uma sequência
+de N peças da sua cor (Jogador = Círculo 1 / Computador = Círculo 2)
+em linha reta. 
+
+A linha pode ser:
+* Horizontal
+* Vertical
+* Diagonal
+
+O valor de 'N' (Conexões Necessárias) pode ser ajustado no controle deslizante (slider) do diálogo de configurações.
+
+2. COMO JOGAR
+-----------------------------------------------------------
+O jogo se passa em um tabuleiro 6x7, onde as peças caem (gravidade).
+1. O JOGADOR (você) sempre começa.
+2. Para fazer um movimento, basta clicar na coluna desejada do tabuleiro.
+3. A peça cairá até a posição mais baixa disponível naquela coluna.
+4. Se a coluna estiver cheia, o clique será ignorado.
+5. O jogo alterna entre o JOGADOR e o COMPUTADOR (IA).
+
+3. CONFIGURAÇÕES DA INTELIGÊNCIA ARTIFICIAL (IA)
+-----------------------------------------------------------
+
+PROFUNDIDADE DE BUSCA (DIFICULDADE)
+-----------------------------------------------------------
+- Controlada pelo controle deslizante 'Profundidade da IA'.
+- A IA usa o algoritmo Minimax com Poda Alpha-Beta.
+- A profundidade (por exemplo, 7) indica quantos movimentos futuros (seus e do computador) a IA irá analisar.
+- VALOR MAIOR = IA mais inteligente, porém com tempo de cálculo mais longo.
+- Recomenda-se valores entre 4 e 7.
+
+CONEXÕES NECESSÁRIAS (N)
+-----------------------------------------------------------
+- Controla o valor de N para a vitória (N-em-linha).
+- Padrão é 4 (Connect-4).
+- Se definido para 3, o jogo se torna Connect-3, etc.
+- A IA adapta automaticamente sua estratégia de bloqueio e ataque a este valor.
+
+MODO PAUSA DA IA
+-----------------------------------------------------------
+- Se ativado, o computador pausa após calcular sua melhor jogada, permitindo que você visualize o resultado e pressione 'Prosseguir' para que a jogada seja executada.
+
+4. ESTRATÉGIA E OTIMIZAÇÃO DA IA
+-----------------------------------------------------------
+A IA foi otimizada para identificar e bloquear ameaças de vitória iminente, 
+tanto na vertical quanto na horizontal ou diagonal, mesmo quando a profundidade
+de busca é limitada.
+
+A lógica de pontuação do computador garante que:
+1. BLOQUEAR uma ameaça de N-1 peças do oponente (que levaria à derrota no próximo turno) é sempre a jogada de MAIOR PRIORIDADE.
+2. O computador verifica o fator GRAVIDADE, garantindo que só bloqueie ameaças que são realmente jogáveis (ou seja, a peça de bloqueio não estaria suspensa no ar).
+
+===========================================================
+- Use o botão 'Reiniciar Jogo' para começar uma nova partida a qualquer momento.
+- Use o botão 'Sair' para fechar o diálogo.
+===========================================================

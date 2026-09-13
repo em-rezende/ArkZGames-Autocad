@@ -1,0 +1,116 @@
+WORDLE PARA AUTOCAD
+===================
+
+DESCRIÇÃO
+---------
+Wordle é um jogo de palavras para AutoCAD onde o objetivo é adivinhar uma palavra secreta de 5 letras em até 6 tentativas.
+
+COMO JOGAR
+----------
+1. Clique em "Novo Jogo" para iniciar uma partida
+2. Uma palavra secreta de 5 letras será escolhida aleatoriamente
+3. Digite uma palavra de 5 letras no campo "Palavra:" ou use o teclado virtual
+4. Clique em "Tentar" ou pressione ENTER para submeter sua tentativa
+5. Após cada tentativa, as letras serão coloridas:
+   - VERDE: Letra correta na posição correta
+   - AMARELO: Letra existe na palavra mas em posição errada
+   - VERMELHO: Letra não existe na palavra
+   - CINZA: Célula vazia ou letra não tentada
+
+REGRAS
+------
+- Apenas palavras válidas do dicionário português são aceitas
+- Você tem 6 tentativas para acertar a palavra
+- As letras podem se repetir na palavra
+- Apenas letras maiúsculas são aceitas
+
+TECLADO VIRTUAL
+---------------
+Use o teclado virtual para digitar:
+- Clique nas letras para adicioná-las à palavra
+- BACK: Apaga a última letra digitada
+- ENTER: Submete a palavra (equivalente ao botão "Tentar")
+
+As teclas mudam de cor conforme as letras são usadas:
+- VERDE: Letra já usada na posição correta
+- AMARELO: Letra já usada em posição errada
+- VERMELHO: Letra já usada mas não existe na palavra
+- CINZA: Letra ainda não usada
+
+CONTROLES
+---------
+- NOVO JOGO: Inicia um novo jogo com palavra aleatória
+- TENTAR: Submete a palavra digitada
+- AJUDA: Exibe estas informações
+- SAIR: Fecha o jogo
+
+CORES
+-----
+- Fundo VERDE (3): Letra correta na posição correta
+- Fundo AMARELO (2): Letra existe mas em posição errada
+- Fundo VERMELHO (1): Letra não existe na palavra
+- Fundo CINZA (252): Célula vazia/não tentada
+
+DICAS
+-----
+1. Comece com palavras que contenham vogais comuns
+2. Use as informações das cores para eliminar possibilidades
+3. Preste atenção às letras que já foram tentadas e suas cores
+4. Experimente palavras com letras diferentes a cada tentativa
+
+ARQUIVOS NECESSÁRIOS
+-------------------
+- Wordle.dcl: Arquivo de definição da interface
+- Wordle.lsp: Arquivo principal do programa
+- Wordle.csv: Lista de palavras válidas (opcional)
+- Wordle.slb: Biblioteca de slides com as letras
+
+SE NÃO ENCONTRAR ARQUIVO CSV
+----------------------------
+O programa usará uma lista interna de palavras de fallback:
+CARRO, CASAL, CASAO, CAIXA, CINCO, DADOS, DANCA, DENTE, FOCUS,
+FOGAO, GATOS, GOLFO, HOTEL, IGREJA, JOGOS, LARGO, LEITE, LIMAO,
+PASTO, PEDRA, QUASE, RADIO, SAPOS, TIGRE, UNHAS, VASOS, XALES, ZEBRA
+
+COMO CRIAR SEU PRÓPRIO ARQUIVO CSV
+----------------------------------
+1. Crie um arquivo de texto chamado Wordle.csv
+2. Adicione uma palavra por linha (apenas palavras de 5 letras)
+3. Use apenas letras maiúsculas
+4. Salve o arquivo na mesma pasta do Wordle.lsp
+
+EXEMPLOS DE PALAVRAS VÁLIDAS
+----------------------------
+- CARRO, CASAL, CASAO, CAIXA, CINCO
+- DADOS, DANCA, DENTE, FOCUS, FOGAO
+- GATOS, GOLFO, HOTEL, IGREJA, JOGOS
+- LARGO, LEITE, LIMAO, PASTO, PEDRA
+- QUASE, RADIO, SAPOS, TIGRE, UNHAS
+- VASOS, XALES, ZEBRA
+
+SOLUÇÃO DE PROBLEMAS
+--------------------
+- Se as letras não aparecerem: Verifique se Wordle.slb está na pasta
+- Se as cores não mudarem: Verifique a instalação do AutoCAD
+- Se o jogo não iniciar: Verifique se Wordle.dcl está na pasta
+
+ATALHOS DO TECLADO
+------------------
+- ENTER: Submeter palavra
+- ESC: Sair do jogo
+- TAB: Navegar entre controles
+
+VERSÃO
+------
+Wordle para AutoCAD v1.0
+Desenvolvido por Ark-Z Arquitetura Ltda
+
+CONTATO
+-------
+Para suporte ou sugestões, entre em contato:
+Ark-Z Arquitetura Ltda
+
+DIREITOS AUTORAIS
+-----------------
+© 2024 Ark-Z Arquitetura Ltda. Todos os direitos reservados.
+Este software é fornecido "como está", sem garantias de qualquer tipo.

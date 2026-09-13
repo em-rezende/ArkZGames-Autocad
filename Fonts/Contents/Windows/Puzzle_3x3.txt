@@ -1,0 +1,26 @@
+ARK-Z ARQUITETURA LTDA
+PADRONIZAÇÃO DE MENU PARA O AUTOCAD
+
+JOGO PUZZLE DESLIZANTE 3X3 (8-PUZZLE)
+Este é um jogo de quebra-cabeça clássico onde o objetivo é organizar as peças numeradas de 1 a 8 em ordem crescente, linha por linha, da esquerda para a direita, deixando o espaço vazio (BLANK) no canto inferior direito.
+
+REGRAS DO JOGO:
+- Movimento: Você só pode mover uma peça (um número) que esteja adjacente (acima, abaixo, à esquerda ou à direita) ao espaço vazio.
+- Meta: Alcançar o estado final resolvido:
+
+   1   2   3
+   
+   4   5   6
+   
+   7   8   
+
+COMO JOGAR:
+
+- Iniciar/Embaralhar: Use o botão "Reiniciar" para embaralhar o tabuleiro. A função de embaralhamento garante que o quebra-cabeça sempre tenha uma solução.
+- Mover: Clique em uma peça que esteja tocando o espaço vazio. A peça deslizará para o espaço vazio.
+- Vitória: O jogo termina e uma mensagem de alerta é exibida quando o tabuleiro atinge o estado final resolvido.
+
+DESENVOLVIMENTO E AUTORIA:
+
+Este programa foi desenvolvido usando AutoLISP e DCL (Dialog Control Language) para rodar dentro do ambiente AutoCAD. A lógica implementada (shuffle_board, cell_clicked e check_win) garante a jogabilidade correta e a verificação da solução.
+

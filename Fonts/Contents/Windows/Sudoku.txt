@@ -1,0 +1,55 @@
+SUDOKU - Jogo para AutoCAD
+Versão 1.0
+
+SOBRE O JOGO:
+-------------
+Sudoku é um jogo de lógica onde o objetivo é preencher uma grade 9x9 com números de 1 a 9, seguindo regras específicas.
+
+REGRAS:
+-------
+1. Cada linha deve conter todos os números de 1 a 9, sem repetição.
+2. Cada coluna deve conter todos os números de 1 a 9, sem repetição.
+3. Cada bloco 3x3 (sub-grade) deve conter todos os números de 1 a 9, sem repetição.
+
+COMO JOGAR:
+-----------
+- Células em preto são números fixos do puzzle e não podem ser alteradas.
+- Clique em uma célula vazia e digite um número de 1 a 9.
+- Para apagar, pressione Backspace ou digite 0.
+- Use as Dicas (máximo 3 por jogo) para revelar células difíceis.
+- Use Verificar para validar suas respostas.
+- O jogo termina quando todas as células estiverem preenchidas corretamente.
+
+DIFICULDADES:
+-------------
+- Fácil: Ideal para iniciantes, com muitas pistas.
+- Médio: Desafio balanceado para jogadores experientes.
+- Difícil: Para quem gosta de desafios complexos.
+- Expert: Apenas para os melhores solucionadores de Sudoku.
+
+DICAS DE ESTRATÉGIA:
+-------------------
+1. Comece identificando números óbvios.
+2. Procure por números que só podem ir em uma célula específica.
+3. Use o processo de eliminação.
+4. Anote possibilidades em células difíceis (mentalmente).
+5. Não tenha medo de usar as dicas quando necessário.
+
+CONTROLES:
+----------
+- Novo Jogo: Inicia um novo puzzle com a dificuldade selecionada.
+- Dica: Revela o conteúdo de uma célula vazia (limite de 3).
+- Verificar: Valida as células preenchidas sem revelar a solução.
+- Resolver: Completa o puzzle automaticamente (encerra o jogo).
+- Ajuda: Exibe estas informações.
+
+DESENVOLVIMENTO:
+----------------
+Desenvolvido por: Ark-Z Arquitetura Ltda
+Data: 2024
+Versão: 1.0
+
+O Sudoku foi criado para entretenimento e exercício mental.
+Bom jogo!
+
+

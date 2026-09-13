@@ -1,0 +1,27 @@
+;;; VLisp project file [V2.0] ArkZGames saved to:[D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/FONTES/Lisp Fontes] at:[12/16/25] 
+(VLISP-PROJECT-LIST
+  :NAME
+  ArkZGames
+  :OWN-LIST
+  ("D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Wordle"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Game2048"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Sudoku"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Hanoi"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Checkers_8x8"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Connect4"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Minesweeper_8x8"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Puzzle_3x3"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/Puzzle_4x4"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/SeaBattle_8x8"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/TicTacToe_3x3"
+    "D:/PROGRAMACAO/ARK-Z PLUGINS/ArkZGames/Fontes/LSP/TicTacToe_4x4")
+  :FAS-DIRECTORY
+  "D:\\PROGRAMACAO\\ARK-Z PLUGINS\\ArkZGames\\FONTES\\FAS"
+  :TMP-DIRECTORY
+  "D:\\PROGRAMACAO\\ARK-Z PLUGINS\\ArkZGames\\FONTES\\TMP"
+  :PROJECT-KEYS
+  (:BUILD (:standard) :MERGED nil :SAFE-MODE T :MSGLEVEL 1)
+  :CONTEXT-ID
+  :AUTOLISP
+)
+;;; EOF

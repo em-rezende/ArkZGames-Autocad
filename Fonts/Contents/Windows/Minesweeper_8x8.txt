@@ -1,0 +1,36 @@
+ARK-Z ARQUITETURA LTDA
+PADRONIZAÇÃO DE MENU PARA O AUTOCAD
+
+JOGO CAMPO MINADO 8x8 (MINESWEEPER)
+O Campo Minado é um jogo de lógica clássico. O objetivo é revelar todas as células do tabuleiro que NÃO contêm minas, utilizando as informações numéricas deixadas nas células reveladas.
+
+O tabuleiro tem 8x8 células e, por padrão, contém 10 minas no total.
+
+REGRAS DO JOGO:
+
+- Números (1 a 8): Quando você clica em uma célula sem mina, se houver minas adjacentes, a célula exibe um número. Este número indica QUANTAS minas estão presentes nas 8 células vizinhas (incluindo diagonais).
+
+- Espaço Vazio (0): Se você clica em uma célula e ela está vazia (0 minas vizinhas), o jogo revela automaticamente todas as células vizinhas a ela, e esse processo se repete recursivamente até encontrar células com números.
+
+- Mina: Se você clicar em uma mina, o jogo termina imediatamente, a mina explodida é revelada, e a célula fica marcada com o fundo VERMELHO.
+
+- Meta: Vencer o jogo ao revelar todas as células livres de minas. O contador "Restantes" mostra quantas células seguras ainda precisam ser reveladas.
+
+CONTROLE DE DIFICULDADE (NOVO):
+
+- Slider "Nº de Minas": Use o controle deslizante (slider) para ajustar o nível de dificuldade do jogo antes de começar.
+    - O número de minas pode ser ajustado de **8 (Fácil)** a **54 (Extremo)**.
+    - Ao mover o slider, o jogo é automaticamente **REINICIADO** com o novo número de minas.
+    
+- Nível Padrão: 10 Minas.
+
+COMO JOGAR:
+
+- Iniciar/Reiniciar: Use o botão "Reiniciar" ou mova o slider para gerar um novo tabuleiro com a dificuldade atual.
+- Mover: Clique em qualquer célula do tabuleiro para tentar revelá-la.
+- Navegação: Use a lógica dedutiva para evitar as minas.
+
+DESENVOLVIMENTO E AUTORIA:
+
+Este programa foi desenvolvido usando AutoLISP e DCL (Dialog Control Language) para rodar dentro do ambiente AutoCAD. A lógica garante um jogo desafiador e fiel às regras originais.
+

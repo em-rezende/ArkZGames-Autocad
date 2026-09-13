@@ -1,0 +1,73 @@
+ARK-Z ARQUITETURA LTDA
+PADRONIZAÇÃO DE MENU PARA O AUTOCAD
+
+======================================================
+AJUDA: JOGO DE DAMAS 8x8 (AutoLisp)
+======================================================
+
+Este script implementa o jogo de Damas (Checkers) em um tabuleiro 8x8 contra uma Inteligência Artificial (IA) baseada no algoritmo Minimax, dentro do ambiente CAD.
+
+------------------------------------------------------
+1. COMANDOS PRINCIPAIS
+------------------------------------------------------
+
+* DAMAS_8X8: Inicia o jogo e carrega o painel de diálogo DCL.
+* REINICIAR (Botão): Reinicia o tabuleiro para a posição inicial.
+* ACEITAR/CANCELAR (Botões): Fecha o diálogo DCL e encerra o jogo.
+
+------------------------------------------------------
+2. REGRAS BÁSICAS
+------------------------------------------------------
+
+* JOGADOR: Peças que iniciam na parte inferior do tabuleiro.
+* COMPUTADOR: Peças que iniciam na parte superior do tabuleiro.
+* MOVIMENTO: Diagonal, uma casa por vez, apenas para frente (direção do adversário).
+* REI: Peças que atingem a linha de fundo, podem mover-se para frente e para trás.
+
+------------------------------------------------------
+3. CONTROLES E CONFIGURAÇÕES DA IA
+------------------------------------------------------
+
+Profundidade de Busca (Slider):
+Define a complexidade do cálculo da IA (Minimax). Valores maiores resultam em uma IA mais forte, mas aumentam o tempo de cálculo.
+
+Forçar Captura (Toggle):
+- Ativado ("1"): O jogador e o computador SÃO OBRIGADOS a realizar uma captura, se disponível.
+- Desativado ("0"): A captura é opcional.
+
+Pausar IA (Toggle):
+- Ativado ("1"): A IA calcula o movimento e PAUSA, aguardando o clique em "Prosseguir" para executá-lo.
+- Desativado ("0"): A IA calcula e executa o movimento IMEDIATAMENTE.
+
+Prosseguir (Botão):
+Ativado apenas no modo "Pausar IA" (ativado). Executa o movimento da IA que está em espera.
+
+------------------------------------------------------
+4. SALVAR E CARREGAR POSIÇÃO
+------------------------------------------------------
+
+O jogo utiliza o arquivo "damas_save.txt" para armazenar o estado do jogo.
+
+Salvar Posição:
+Grava o estado atual do tabuleiro, o turno, o histórico de movimentos e as configurações da IA no arquivo "damas_save.txt".
+
+Carregar Posição:
+Restaura o jogo executando o arquivo "damas_save.txt".
+
+Salvar Notação:
+Cria/sobrescreve o arquivo "damas_notation.txt" com a sequência de movimentos no formato padrão de damas (ex: 22-18 ou 17x26).
+
+------------------------------------------------------
+5. COMO JOGAR
+------------------------------------------------------
+
+1. Inicie com o comando DAMAS_8X8.
+2. O JOGADOR sempre começa.
+3. Para jogar: Clique em uma peça sua para SELECIONAR.
+4. Em seguida, clique na casa de destino (vazia) para MOVER ou CAPTURAR.
+5. Se o movimento for inválido ou se houver uma captura obrigatória não realizada, o sistema emitirá um aviso na linha de comando.
+6. Após a jogada do JOGADOR, o turno passa para o COMPUTADOR.
+
+======================================================
+
+

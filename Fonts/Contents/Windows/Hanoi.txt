@@ -1,0 +1,129 @@
+===========================================================
+  TORRE DE HANÓI v2.0
+  Jogo Interativo para AutoCAD
+===========================================================
+
+DESCRIÇÃO
+---------
+O Torre de Hanói é um quebra-cabeça matemático clássico inventado por Édouard Lucas em 1883. Esta versão implementa o jogo como uma aplicação interativa para AutoCAD usando AutoLISP e interface DCL.
+
+OBJETIVO
+--------
+Mover todos os discos da haste A para a haste C, seguindo as regras do jogo.
+
+REGRAS DO JOGO
+--------------
+1. Só pode mover um disco por vez
+2. Disco maior NUNCA pode ficar sobre disco menor
+3. Use as hastes B e C como auxiliares
+4. Mínimo teórico de movimentos: 2^n - 1 (onde n = número de discos)
+
+CONTROLES
+---------
+SLIDER DE DISCOS:
+   - Seleciona número de discos (3 a 8)
+   - O jogo inicia automaticamente ao alterar
+
+HASTES (IMAGE_BUTTONS):
+   - Clique em uma haste para selecionar ORIGEM (borda amarela)
+   - Clique em outra haste para selecionar DESTINO (move automaticamente)
+   - Se clicar na mesma haste, cancela seleção
+
+BOTÕES:
+   [ Resetar ] - Reinicia jogo com mesmo número de discos
+   [  Ajuda  ] - Mostra instruções detalhadas
+   [   Sair  ] - Fecha o jogo
+
+INDICADORES DE STATUS
+---------------------
+- Movimentos: Contador de movimentos realizados
+- Mínimo: Número mínimo teórico de movimentos
+- Status: Mensagens informativas sobre o jogo
+- Contadores: A: X | B: X | C: X (discos em cada haste)
+
+CÓDIGOS DE CORES DOS DISCOS
+---------------------------
+Disco 1: Vermelho    (menor)
+Disco 2: Amarelo
+Disco 3: Verde
+Disco 4: Azul claro
+Disco 5: Magenta
+Disco 6: Azul
+Disco 7: Branco
+Disco 8: Cinza       (maior)
+
+INDICADORES VISUAIS
+-------------------
+BORDA AMARELA: Haste selecionada como origem BORDA VERMELHA: Movimento inválido (erro)
+SEM BORDA: Haste normal
+
+MÍNIMOS TEÓRICOS
+----------------
+Discos | Mínimo de Movimentos
+-------+----------------------
+   3   |          7
+   4   |         15
+   5   |         31
+   6   |         63
+   7   |        127
+   8   |        255
+
+COMO JOGAR
+----------
+1. Use o slider para escolher número de discos (3-8)
+2. Clique na haste A (com discos) para selecionar origem
+3. Clique na haste B ou C para mover o disco superior
+4. Continue movendo discos até transferir todos para haste C
+5. Tente completar no mínimo teórico de movimentos!
+
+ARQUIVOS NECESSÁRIOS
+--------------------
+- Hanoi.dcl        (arquivo de diálogo)
+- Hanoi.lsp        (este arquivo AutoLISP)
+
+INSTALAÇÃO
+----------
+1. Coloque os arquivos Hanoi.dcl e Hanoi.lsp na pasta de suporte do AutoCAD
+2. No AutoCAD, digite: (load "Hanoi.lsp")
+3. Para iniciar o jogo, digite: HANOI
+
+DICAS DE ESTRATÉGIA
+-------------------
+- O disco menor (vermelho) é o mais móvel - use-o para liberar discos maiores
+- Tente deixar sempre um espaço vazio para movimentar discos intermediários
+- Planeje 2-3 movimentos à frente
+- Para n discos, a solução recursiva é:
+  1. Mover n-1 discos para haste auxiliar (B)
+  2. Mover disco maior para haste destino (C)
+  3. Mover n-1 discos de B para C
+
+HISTÓRICO DE VERSÕES
+--------------------
+v2.0 (Atual)
+   - Seleção direta por image_buttons
+   - Destaque visual de erros (borda vermelha)
+   - Controle por slider automático
+   - Interface DCL melhorada
+
+v1.0
+   - Versão inicial com entrada por texto
+
+CRÉDITOS
+--------
+Desenvolvido em AutoLISP para AutoCAD
+Baseado no problema clássico de Édouard Lucas (1883)
+
+PROBLEMAS CONHECIDOS
+--------------------
+- Nenhum problema reportado na versão atual
+
+SUGESTÕES E BUGS
+----------------
+Para reportar bugs ou sugerir melhorias, contate o desenvolvedor.
+
+===========================================================
+  DIVIRTA-SE E BOA SORTE!
+===========================================================
+
+COMANDO PARA INICIAR: HANOI
+

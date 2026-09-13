@@ -1,0 +1,66 @@
+ARK-Z ARQUITETURA LTDA
+PADRONIZAÇÃO DE MENU PARA O AUTOCAD
+
+===========================================================
+JOGO DA VELHA - GRÁFICO (4x4)
+===========================================================
+
+Este é um jogo da velha estendido implementado como um comando AutoLISP/DCL, onde o jogador (X) compete contra o computador (O) em um tabuleiro maior (4x4).
+
+---
+
+OBJETIVO DO JOGO:
+O objetivo é conseguir "N" de suas marcas (X ou O) em uma linha horizontal, vertical ou diagonal antes que seu oponente o faça.
+
+---
+
+REGRAS DE VITÓRIA (N em Linha):
+A grande diferença neste tabuleiro 4x4 é a capacidade de escolher a regra de vitória.
+
+- [3 em Linha (Padrão)] O jogador ou o computador precisa de 3 marcas consecutivas para vencer.
+- [4 em Linha] O jogador ou o computador precisa de 4 marcas consecutivas para vencer.
+
+Você deve selecionar a regra desejada na seção "Regra de Vitória".
+
+---
+
+COMO JOGAR:
+
+1.  [Início] Inicie o jogo digitando `TicTacToe_4x4` na linha de comando. Uma caixa de diálogo gráfica com o tabuleiro 4x4 será exibida.
+2.  [Configuração] Escolha a regra de vitória (3 em Linha ou 4 em Linha). O padrão é 3 em Linha.
+3.  [Seu Turno] Você joga como o jogador 'X'. O jogo sempre começa com você ("Sua vez de jogar").
+4.  [Fazendo uma Jogada] Clique em uma das dezesseis células vazias do tabuleiro. Sua marca 'X' aparecerá.
+5.  [Turno do Computador] O computador (O) fará sua jogada automaticamente.
+6.  [Status] A mensagem de status indica a vez do jogador atual ou o resultado final.
+7.  [Fim do Jogo] O jogo termina quando um dos jogadores atinge N marcas em linha (vitória) ou quando todas as células estão cheias (empate).
+8.  [Reiniciar] Clique no botão [Reiniciar] para limpar o tabuleiro e começar um novo jogo com a mesma regra de vitória selecionada.
+
+---
+
+CONTROLES DA DIÁLOGO:
+
+- [Regra de Vitória] Botões de rádio para selecionar se a vitória é 3 em linha ou 4 em linha.
+- [Tabuleiro 4x4] Os 16 botões de imagem para fazer sua jogada.
+- [Status] Exibe o andamento e o resultado do jogo].
+- [Reiniciar] Começa um novo jogo.
+- [Sair] Fecha a caixa de diálogo do jogo.
+- [Ajuda] Exibe esta janela de informações.
+
+---
+
+ESTRATÉGIA DE JOGO DO COMPUTADOR (O) 4x4:
+
+O computador utiliza uma estratégia mais complexa para este tabuleiro maior:
+1.  [Vitória Imediata] Verifica se pode vencer na jogada atual (3 ou 4 em linha).
+2.  [Defesa] Bloqueia a vitória do jogador 'X' se 'X' tiver uma jogada vencedora imediata.
+3.  [Meio] Tenta ocupar as células centrais (1,1) ou (2,2) se estiverem vazias.
+4.  [Cantos] Prioriza os cantos do tabuleiro 4x4: (0,0), (0,3), (3,0), (3,3).
+5.  [Lados] Prioriza os lados (células não-canto e não-centro).
+6.  [Interior] Por último, ocupa as células interiores restantes: (1,1), (1,2), (2,1), (2,2).
+
+---
+
+INFORMAÇÕES DE VERSÃO:
+Jogo da Velha - Gráfico (4x4)
+Desenvolvido por Ark-Z Arquitetura Ltda.
+Este programa requer os arquivos de slides (.SLD) de 'X', 'O', 'BLANK', 'Separato' e 'ArkZLogo' para a correta exibição gráfica.

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage
+   SchemaVersion="1.0"
+   ProductType="Application"
+   Name="ArkZ Games"
+   AppVersion="1.0.0"
+   FriendlyVersion="1.0.0"
+   Description="Jogos Ark-Z para AutoCAD"
+   Author="Ezequiel M Rezende"
+   Icon="./Contents/Resources/Ark-Z.ico"
+   AppNameSpace="appstore.exchange.autodesk.com"   
+   HelpFile="./Contents/Resources/Index.htm"
+   ProductCode="{DE541FD8-0E06-4677-A9E9-DDA271DDA2A6}"
+   UpgradeCode=""
+   SupportedLocales="Enu"
+   OnlineDocumentation="https://arkz.duckdns.org/games">
+   
+   <CompanyDetails
+      Name="Ark-Z Arquitetura"
+      Email="emrezende@gmail.com"
+      Url="https://arkz.duckdns.org/"
+      Phone=""
+   />
+   
+   <Components Description="2013 to 2026 Games Parts">
+      <RuntimeRequirements
+          SupportPath="./Contents/;./Contents/Windows/"
+          OS="Win32|Win64"
+          Platform="AutoCAD*|AutoCAD"
+          SeriesMin="R19.0"
+          SeriesMax="R26.0"
+      />
+      
+      <!-- Componentes principais que carregam automaticamente -->
+
+      <ComponentEntry
+          AppName="Ark-Z Games Ribbon"
+          Version="1.0.0"
+          ModuleName="./Contents/Windows/ArkZGames.cuix"
+          AppDescription="Faixa de opções Ark-Z Games para AutoCAD"
+          PerDocument="False"
+          LoadOnAutoCADStartup="True"
+      />
+      
+     
+      <!-- LISTA DE COMANDOS DOS JOGOS -->
+      <!-- Connect4 -->
+      <Command Local="Connect4" Group="Ark-Z Games" Global="Connect4">
+          <ComponentEntry ModuleName="./Contents/Windows/Connect4.fas"/>
+      </Command>
+      
+      <!-- Damas_8x8 -->
+      <Command Local="Damas_8x8" Group="Ark-Z Games" Global="Damas_8x8">
+          <ComponentEntry ModuleName="./Contents/Windows/Damas_8x8.fas"/>
+      </Command>
+	  
+      <!-- Hanoi -->
+      <Command Local="Hanoi" Group="Ark-Z Games" Global="Hanoi">
+          <ComponentEntry ModuleName="./Contents/Windows/Hanoi.fas"/>
+      </Command>
+	  
+      <!-- Minesweeper_8x8 -->
+      <Command Local="Minesweeper_8x8" Group="Ark-Z Games" Global="Minesweeper_8x8">
+          <ComponentEntry ModuleName="./Contents/Windows/Minesweeper_8x8.fas"/>
+      </Command>
+      
+      <!-- Puzzle_3x3 -->
+      <Command Local="Puzzle_3x3" Group="Ark-Z Games" Global="Puzzle_3x3">
+          <ComponentEntry ModuleName="./Contents/Windows/Puzzle_3x3.fas"/>
+      </Command>
+      
+      <!-- Puzzle_4x4 -->
+      <Command Local="Puzzle_4x4" Group="Ark-Z Games" Global="Puzzle_4x4">
+          <ComponentEntry ModuleName="./Contents/Windows/Puzzle_4x4.fas"/>
+      </Command>
+      
+      
+      <!-- SeaBattle_8x8 -->
+      <Command Local="SeaBattle_8x8" Group="Ark-Z Games" Global="SeaBattle_8x8">
+          <ComponentEntry ModuleName="./Contents/Windows/SeaBattle_8x8.fas"/>
+      </Command>
+
+      <!-- Game2048 -->
+      <Command Local="Game2048" Group="Ark-Z Games" Global="Game2048">
+          <ComponentEntry ModuleName="./Contents/Windows/Game2048.fas"/>
+      </Command>
+
+      <!-- Sudoku -->
+      <Command Local="Sudoku" Group="Ark-Z Games" Global="Sudoku">
+          <ComponentEntry ModuleName="./Contents/Windows/Sudoku.fas"/>
+      </Command>
+	  
+      <!-- TicTacToe_3x3 -->
+      <Command Local="TicTacToe_3x3" Group="Ark-Z Games" Global="TicTacToe_3x3">
+          <ComponentEntry ModuleName="./Contents/Windows/TicTacToe_3x3.fas"/>
+      </Command>
+      
+      <!-- TicTacToe_4x4 -->
+      <Command Local="TicTacToe_4x4" Group="Ark-Z Games" Global="TicTacToe_4x4">
+          <ComponentEntry ModuleName="./Contents/Windows/TicTacToe_4x4.fas"/>
+      </Command>
+	  
+       <!-- Wordle -->
+      <Command Local="Wordle" Group="Ark-Z Games" Global="Wordle">
+          <ComponentEntry ModuleName="./Contents/Windows/Wordle.fas"/>
+      </Command>
+ 
+   </Components>
+</ApplicationPackage>

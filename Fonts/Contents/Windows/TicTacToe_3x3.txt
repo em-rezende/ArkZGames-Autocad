@@ -1,0 +1,54 @@
+ARK-Z ARQUITETURA LTDA
+PADRONIZAÇÃO DE MENU PARA O AUTOCAD
+
+===========================================================
+JOGO DA VELHA - GRÁFICO (3x3)
+===========================================================
+
+Este é um jogo clássico da velha implementado como um comando AutoLISP/DCL, onde o jogador (X) compete contra o computador (O).
+
+---
+
+OBJETIVO DO JOGO:
+O objetivo é colocar três de suas marcas (X ou O) em uma linha horizontal, vertical ou diagonal antes que seu oponente o faça.
+
+---
+
+COMO JOGAR:
+
+1.  [Início] Inicie o jogo digitando `TicTacToe_3x3` na linha de comando. Uma caixa de diálogo gráfica com o tabuleiro 3x3 será exibida[cite: 1].
+2.  [Seu Turno] Você joga como o jogador 'X'. O jogo sempre começa com você ("Sua vez de jogar").
+3.  [Fazendo uma Jogada] Clique em uma das nove células vazias do tabuleiro[cite: 9, 10, 11, 12, 13, 14, 15, 16, 17]. Sua marca 'X' aparecerá na célula.
+4.  [Turno do Computador] Após a sua jogada, o jogador é trocado para 'O' (o computador). O computador fará sua jogada automaticamente e colocará um 'O' em uma célula vazia.
+5.  [Status] O painel de status na parte inferior da caixa de diálogo indica de quem é a vez de jogar[cite: 18].
+6.  [Fim do Jogo: O jogo termina quando um dos jogadores consegue três marcas em linha (vitória) ou quando todas as células estão preenchidas sem um vencedor (empate).
+7.  [Reiniciar] Clique no botão [Reiniciar] para limpar o tabuleiro e começar um novo jogo[cite: 19].
+
+---
+
+CONTROLES DA DIÁLOGO:
+
+- [Tabuleiro (9 botões de imagem)] Usado para fazer sua jogada clicando na célula desejada[cite: 9, 10, 11, 12, 13, 14, 15, 16, 17].
+- [Status] Exibe a vez do jogador atual ou o resultado final do jogo[cite: 18].
+- [Reiniciar] Começa um novo jogo[cite: 19].
+- [Sair] Fecha a caixa de diálogo do jogo[cite: 21].
+- [Ajuda] Exibe esta janela de ajuda/informações (TicTacToe_3x3_Help)[cite: 22, 23].
+
+---
+
+ESTRATÉGIA DE JOGO DO COMPUTADOR (O):
+
+O computador foi programado com uma estratégia de jogo básica:
+1.  [Vitória Imediata] Verifica se pode vencer na jogada atual.
+2.  [Defesa] Bloqueia a vitória do jogador 'X' se 'X' tiver uma jogada vencedora imediata.
+3.  [Centro] Se o centro (1,1) estiver vazio, ele o ocupa (melhor jogada).
+4.  [Cantos] Se os cantos estiverem vazios (0,0), (0,2), (2,0) ou (2,2), ele joga no primeiro canto disponível.
+5.  [Lados] Se os lados restantes estiverem vazios (0,1), (1,0), (1,2) ou (2,1), ele joga no primeiro lado disponível.
+
+---
+
+INFORMAÇÕES DE VERSÃO:
+Jogo da Velha - Gráfico (3x3)
+Desenvolvido por Ark-Z Arquitetura Ltda.
+Este programa requer os arquivos de slides (.SLD) de 'X', 'O', 'BLANK', 'Separato' e 'ArkZLogo' para a correta exibição gráfica.
+

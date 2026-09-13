@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArkZGames · Jogos dentro do AutoCAD</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        /* Estilos essenciais para grade de jogos, formatação e lightbox */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .game-card {
+            background: #f9fcff;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #d9e6f2;
+            box-shadow: 0 8px 20px rgba(0, 30, 60, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 28px rgba(18, 45, 74, 0.12);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #e6f0f9;
+            border-bottom: 2px solid white;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .game-image:hover {
+            opacity: 0.9;
+        }
+
+        .game-content {
+            padding: 1.5rem 1.5rem 1.8rem;
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f3b5e;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .game-description {
+            color: #2d4b6e;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            background: transparent;
+            border-left: none;
+            padding: 0;
+        }
+
+        .header-badge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== LIGHTBOX RECURSO DE AMPLIAR ===== */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            object-fit: contain;
+            border: 3px solid white;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            cursor: default;
+            background: #111;
+            max-width: none;
+            max-height: none;
+            width: auto;
+            height: auto;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: transform 0.2s;
+            line-height: 1;
+            z-index: 10000;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .lightbox-close:hover {
+            transform: scale(1.2);
+            color: #ffaa00;
+        }
+        
+        .lightbox-image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 95vw;
+            max-height: 95vh;
+            overflow: auto;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <!-- cabeçalho padronizado -->
+    <div class="header-badge">
+        <span class="badge badge-dark">ARK-Z ARQUITETURA</span>
+        <span class="badge">JOGOS PARA O AUTOCAD</span>
+    </div>
+
+    <h2 style="border-bottom: none; margin-top: 0;">🎮 Arcade dentro do AutoCAD</h2>
+    <p style="font-size: 1.1rem; background: #ecf3fa;">
+        Uma coleção de jogos clássicos desenvolvidos para rodar diretamente no ambiente AutoCAD. 
+        Perfeitos para uma pausa ou para testar os limites da personalização do CAD.
+        <br><strong>Clique em qualquer imagem para ampliar no tamanho original.</strong>
+    </p>
+
+    <!-- Grid de jogos (gerado dinamicamente) -->
+    <div class="games-grid" id="gamesGrid"></div>
+	
+    <!-- rodapé -->
+    <hr>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; color: #4f6b89; margin-top: 1rem;">
+        <span>© ARK-Z ARQUITETURA — Jogos clássicos dentro do AutoCAD</span>
+        <span class="badge">ArkZGames · v1.0</span>
+    </div>
+</div>
+
+<!-- LIGHTBOX STRUCTURE -->
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <div class="lightbox-image-wrapper" onclick="event.stopPropagation()">
+        <img class="lightbox-content" id="lightboxImage" src="" alt="Ampliada">
+    </div>
+</div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO DOS JOGOS
+   ---------------------------------------------------------
+   Aqui é o ÚNICO lugar que você precisa mexer.
+   
+   Campos disponíveis por jogo:
+     - title       : Título exibido no card
+     - description : Texto descritivo
+     - img         : Nome do arquivo de imagem (ex: "Conect4.png")
+     - alt         : Texto alternativo (opcional)
+     - width       : Largura exibida no card (ex: "320px", "100%")
+     - height      : Altura exibida no card  (ex: "220px", "auto")
+     - objectFit   : "cover" | "contain" | "fill" | "none" | "scale-down"
+   ========================================================= */
+const JOGOS = [
+    {
+        title: "Conecte-4",
+        description: "O objetivo é ser o primeiro jogador a obter uma sequência de N peças da sua cor (Jogador = Círculo 1 / Computador = Círculo 2) em linha reta.",
+        img: "Conect4.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Damas",
+        description: "Jogo de Damas (Checkers) em um tabuleiro 8x8 contra uma Inteligência Artificial (IA).",
+        img: "Damas.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Campo Minado",
+        description: "O objetivo é revelar todas as células do tabuleiro que NÃO contêm minas, usando as informações numéricas.",
+        img: "Minesweeper.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Quebra-cabeça 3x3 (8-puzzle)",
+        description: "Organize as peças numeradas de 1 a 8 em ordem crescente, deixando o espaço vazio no canto inferior direito.",
+        img: "Puzzle_3x3.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Quebra-cabeça 4x4 (15-puzzle)",
+        description: "Organize as peças numeradas de 1 a 15 em ordem crescente, deixando o espaço vazio no canto inferior direito.",
+        img: "Puzzle_4x4.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Jogo 2048",
+        description: "Combine blocos com números iguais para criar o bloco 2048.",
+        img: "game2048.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Sudoku",
+        description: "Preencha uma grade 9x9 com números de 1 a 9, seguindo as regras clássicas de lógica.",
+        img: "Sudoku.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Batalha Naval (Sea Battle)",
+        description: "Jogo completo de Batalha Naval contra uma Inteligência Artificial (IA) avançada.",
+        img: "SeaBattle.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Jogo da velha 3x3 (TicTacToe)",
+        description: "Clássico jogo da velha: jogador (X) contra o computador (O).",
+        img: "TicTacToe_3x3.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Jogo da velha 4x4 (TicTacToe)",
+        description: "Jogador (X) contra computador (O) em um tabuleiro maior (4x4).",
+        img: "TicTacToe_4x4.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Torre de Hanói",
+        description: "Quebra-cabeça matemático clássico inventado por Édouard Lucas em 1883.",
+        img: "Hanoi.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    },
+    {
+        title: "Wordle",
+        description: "Adivinhe uma palavra secreta de 5 letras em até 6 tentativas.",
+        img: "Wordle.png",
+        width: "75%",
+        height: "150px",
+        objectFit: "cover"
+    }
+];
+
+/* =========================================================
+   GERAÇÃO AUTOMÁTICA DOS CARDS
+   ========================================================= */
+(function renderGames() {
+    const grid = document.getElementById('gamesGrid');
+    if (!grid) return;
+
+    // Fallback SVG caso a imagem não exista
+    const fallback = (label) =>
+        "data:image/svg+xml;utf8," +
+        encodeURIComponent(
+            `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                <rect width="100" height="100" fill="#1e4a76"/>
+                <text x="10" y="55" fill="white" font-size="12">${label}</text>
+            </svg>`
+        );
+
+    grid.innerHTML = JOGOS.map(jogo => {
+        const w = jogo.width  || '100%';
+        const h = jogo.height || '220px';
+        const fit = jogo.objectFit || 'cover';
+
+        return `
+            <div class="game-card">
+                <img class="game-image"
+                     src="file:${jogo.img}"
+                     alt="${jogo.alt || jogo.title}"
+                     title="${jogo.title}"
+                     style="width:${w}; height:${h}; object-fit:${fit};"
+                     onclick="openLightbox(this)"
+                     onerror="this.onerror=null; this.src='${fallback(jogo.title)}';">
+                <div class="game-content">
+                    <div class="game-title">${jogo.title}</div>
+                    <div class="game-description">${jogo.description}</div>
+                </div>
+            </div>
+        `;
+    }).join('');
+})();
+</script>
+<script>
+    function openLightbox(imgElement) {
+        const overlay = document.getElementById('lightboxOverlay');
+        const lightboxImg = document.getElementById('lightboxImage');
+        let imgSrc = imgElement.src;
+        lightboxImg.src = imgSrc;
+        lightboxImg.style.width = '';
+        lightboxImg.style.height = '';
+        lightboxImg.style.maxWidth = 'none';
+        lightboxImg.style.maxHeight = 'none';
+        overlay.classList.add('active');
+    }
+
+    function closeLightbox(event) {
+        const overlay = document.getElementById('lightboxOverlay');
+        if (event.target === overlay || event.target.classList.contains('lightbox-close')) {
+            overlay.classList.remove('active');
+            document.getElementById('lightboxImage').src = '';
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const overlay = document.getElementById('lightboxOverlay');
+            if (overlay.classList.contains('active')) {
+                overlay.classList.remove('active');
+                document.getElementById('lightboxImage').src = '';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+Lista de todas as palavras do português brasileiro
+https://www.ime.usp.br/~pf/dicios/
+
+
+Esta lista de palavras foi preparada a partir do trabalho de Ricardo Ueda Karpischek para o Dicionário br.ispell.  A lista pode estar incompleta (algumas palavras podem estar faltando) e conter erros (grafia incorreta). Ainda assim, ela pode ser útil para testar programas de manipulação de cadeias de caracteres.
+
+Este site tem quatro arquivos, cada um contendo uma variante da lista de palavras:
+
+    br-com-trema-latin1.txt
+
+    Esse arquivo, em código ISO-LATIN-1 (ISO-8859-1), preserva o trema de palavras como "conseqüência".
+    br-latin1.txt
+
+    Nesse arquivo, em código ISO-LATIN-1, o "ü" foi substituído por "u" pois o trema foi abolido pelo Acordo Ortográfico de 2009.
+    br-utf8.txt
+
+    Essa é a versão do arquivo br-latin1.txt em código UTF-8.
+    br-sem-acentos.txt
+
+    Nesta variante, em código ASCII, todos os sinais diacríticos de br-utf8.txt foram removidos (ou seja, "ã" foi substituído por "a", "É" por "E", "ç" por "c", etc.).  A remoção dos sinais diacríticos produziu algumas palavras duplicadas; essas duplicações foram removidas e a lista foi colocada em ordem alfabética (ou melhor, em ordem lexicográfica). 
+
+O uso do material está sujeito à licença Creative Commons Attribution (CC BY) CCBY. Veja também o site do capítulo brasileiro do Creative Commons. 
