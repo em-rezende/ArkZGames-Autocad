@@ -177,7 +177,9 @@ ArkZGames/
 ## 🛠️ Desenvolvimento e build
 
 Os jogos são escritos em **AutoLISP** (`.lsp`) com diálogos em **DCL** (`.dcl`) e
-imagens em bibliotecas d=de *slides* (`.slb`). Cada jogo possui:
+imagens em bibliotecas de *slides* (`.slb`) e arquivo de ajuda *txt* (`.txt`).
+
+Cada jogo possui:
 
 - um arquivo de diálogo (`.dcl`) que define a interface;
 - um script AutoLISP (`.lsp`) com a lógica do jogo;
