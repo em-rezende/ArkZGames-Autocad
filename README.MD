@@ -184,9 +184,6 @@ imagens em bibliotecas d=de *slides* (`.slb`). Cada jogo possui:
 - um arquivo de biblioteca de slides (`.slb`) com as imagens.
 - um arquivo de ajuda (`.txt`) com as informações sobre o jogo.
 
-> Os arquivos `.lsp` não são compilados para `.fas` (formato protegido)
-> e não são incluídos no bundle `Fonts/Contents/Windows/`.
-
 ### Gerar o instalador
 
 O instalador é criado com o **[Inno Setup](https://jrsoftware.org/isinfo.php)** a partir
