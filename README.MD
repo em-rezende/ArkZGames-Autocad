@@ -166,6 +166,8 @@ ArkZGames/
 ├── Support/                      # Recursos do instalador (ícone, imagens do assistente)
 ├── Output/                       # Saída do build → instalador .exe
 ├── Install ArkZGames.iss         # Script do instalador (Inno Setup)
+├── release.ps1                   # Publica o instalador como GitHub Release (gh CLI)
+├── RELEASE_NOTES.md              # Notas de versão enviadas ao GitHub Release
 ├── LICENSE                       # GNU General Public License v3.0
 └── README.MD
 ```
@@ -196,8 +198,43 @@ do script [`Install ArkZGames.iss`](Install%20ArkZGames.iss):
 
 O resultado é gravado em `Output/ArkZGames_v_<versão>_Setup.exe`.
 
-Para publicar uma nova versão, atualize `#define MyAppVersion` no arquivo `.iss`,
-recompile e envie o executável para a seção **Releases** do GitHub.
+Para publicar uma nova versão, atualize `#define MyAppVersion` no arquivo `.iss` e
+recompile o instalador.
+
+### Publicar a release
+
+O script [`release.ps1`](release.ps1) automatiza a publicação de uma versão. Ele:
+
+1. valida o ambiente (GitHub CLI instalado e autenticado) e a existência do instalador;
+2. cria a tag anotada `v<versão>` e a envia para o `origin` (caso ela ainda não exista
+   localmente);
+3. monta as notas da release e cria o **GitHub Release**, anexando o instalador
+   `Output/ArkZGames_v_<versão>_Setup.exe`;
+4. abre o Release publicado no navegador.
+
+Pré-requisitos (ambiente do autor):
+
+1. **GitHub CLI** instalado — `winget install --id GitHub.cli`
+2. Autenticado no GitHub — `gh auth login`
+3. Remote `origin` configurado — `git remote add origin https://github.com/em-rezende/ArkZGames-Autocad.git`
+
+```powershell
+# Publica a versão 260912 usando as notas do arquivo RELEASE_NOTES.md
+.\release.ps1 -Version 260912 -NotesFile .\RELEASE_NOTES.md
+```
+
+| Parâmetro | Padrão | Descrição |
+|:----------|:-------|:----------|
+| `-Version` | `260912` | Versão publicada; define a tag `v<versão>` e o nome do instalador procurado |
+| `-Repo` | `em-rezende/ArkZGames-Autocad` | Repositório de destino do Release |
+| `-Notes` | *(texto padrão)* | Notas da release informadas diretamente na linha de comando |
+| `-NotesFile` | *(vazio)* | Arquivo com as notas da release (ex.: `.\RELEASE_NOTES.md`) |
+| `-Draft` | *(desligado)* | Cria o Release como rascunho (*draft*) |
+| `-Prerelease` | *(desligado)* | Marca o Release como *pre-release* |
+
+> O script não armazena credenciais: a autenticação é feita pelo `gh auth login` e fica
+> nas configurações do GitHub CLI. O instalador anexado (`.exe`) também **não** é
+> versionado no Git — o `.gitignore` ignora `Output/*.exe`.
 
 ---
 
