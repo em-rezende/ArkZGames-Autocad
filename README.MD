@@ -118,7 +118,7 @@ manual é necessária. A aba **Ark-Z Games** aparecerá na faixa de opções.
    ├── PackageContents.xml
    └── Contents/
        ├── Resources/   (ícones, imagens e ajuda)
-       └── Windows/     (jogos compilados .fas, .dcl, .slb, .cuix)
+       └── Windows/     (jogos em .lsp, .dcl, .slb, .txt, .cuix)
    ```
 
 3. Reinicie o AutoCAD.
@@ -150,9 +150,9 @@ ArkZGames/
 │   ├── PackageContents.xml       # Manifesto do bundle (comandos, Ribbon, versões)
 │   └── Contents/
 │       ├── Resources/            # Ícones, imagens dos jogos, ajuda (Index.htm, style.css)
-│       └── Windows/              # Jogos compilados (.fas), diálogos (.dcl) e slides (.slb)
+│       └── Windows/              # Jogos arquivos fontes (arquivos .lsp, .dcl, slb e txt)
 │                                 #   + ArkZGames.cuix (aba da faixa de opções)
-├── Fonts SLD/                    # Código-fonte de cada jogo (organizado por jogo)
+├── Fonts SLD/                    # Arquivos  de slide para cada jogo (organizado por jogo)
 │   ├── Connect4/
 │   ├── Checkers_8x8/
 │   ├── Game_2048/
@@ -163,7 +163,6 @@ ArkZGames/
 │   ├── TicTacToe_3x3/  ·  TicTacToe_4x4/
 │   ├── Torre de Hanoi/
 │   └── Wordle/
-├── Desenvovimento/               # Fontes e protótipos em desenvolvimento (não publicado)
 ├── Support/                      # Recursos do instalador (ícone, imagens do assistente)
 ├── Output/                       # Saída do build → instalador .exe
 ├── Install ArkZGames.iss         # Script do instalador (Inno Setup)
@@ -176,14 +175,15 @@ ArkZGames/
 ## 🛠️ Desenvolvimento e build
 
 Os jogos são escritos em **AutoLISP** (`.lsp`) com diálogos em **DCL** (`.dcl`) e
-imagens de *slides* (`.slb` / `.sld`). Cada jogo possui:
+imagens em bibliotecas d=de *slides* (`.slb`). Cada jogo possui:
 
 - um arquivo de diálogo (`.dcl`) que define a interface;
 - um script AutoLISP (`.lsp`) com a lógica do jogo;
 - um arquivo de biblioteca de slides (`.slb`) com as imagens.
+- um arquivo de ajuda (`.txt`) com as informações sobre o jogo.
 
-> Os arquivos `.lsp` são compilados para `.fas` (formato protegido) antes de serem
-> incluídos no bundle `Fonts/Contents/Windows/`.
+> Os arquivos `.lsp` não são compilados para `.fas` (formato protegido)
+> e não são incluídos no bundle `Fonts/Contents/Windows/`.
 
 ### Gerar o instalador
 
